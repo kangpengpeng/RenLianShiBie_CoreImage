@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="人脸识别" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WechatIMG13363.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="48f-wu-ezN">
+                                <rect key="frame" x="20" y="50" width="300" height="450"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23179316929999999" green="0.24732432139999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GH-nm-RcE">
+                                <rect key="frame" x="120" y="520" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49812353040000001" green="1" blue="0.54978753840000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="faceImgView" destination="1GH-nm-RcE" id="sVv-Vn-BNd"/>
+                        <outlet property="imgView" destination="48f-wu-ezN" id="5kg-4a-6ea"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-410.39999999999998" y="93.103448275862078"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="WaK-dK-e7q">
+            <objects>
+                <viewController id="LSV-nR-Gnk" customClass="CameraViewController" customModule="人脸识别" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VTi-5L-hr4"/>
+                        <viewControllerLayoutGuide type="bottom" id="38Q-QS-kYz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZaL-Ll-Bib">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MAS-GJ-DYO">
+                                <rect key="frame" x="0.0" y="120" width="375" height="517"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yri-io-J94">
+                                <rect key="frame" x="98" y="50" width="179" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.49812353040000001" green="1" blue="0.54978753840000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="扫脸登录"/>
+                                <connections>
+                                    <action selector="btnAction:" destination="LSV-nR-Gnk" eventType="touchUpInside" id="Eap-Hm-GPn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MAS-GJ-DYO" firstAttribute="leading" secondItem="ZaL-Ll-Bib" secondAttribute="leading" id="Hwg-Xs-4kl"/>
+                            <constraint firstItem="MAS-GJ-DYO" firstAttribute="top" secondItem="VTi-5L-hr4" secondAttribute="bottom" constant="100" id="TMz-Ss-6jB"/>
+                            <constraint firstItem="38Q-QS-kYz" firstAttribute="top" secondItem="MAS-GJ-DYO" secondAttribute="bottom" constant="30" id="dCn-Z2-jTF"/>
+                            <constraint firstAttribute="trailing" secondItem="MAS-GJ-DYO" secondAttribute="trailing" id="gDe-XV-NVP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="MAS-GJ-DYO" id="oqf-E0-pqP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KGR-8L-ebv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-410.39999999999998" y="774.96251874062978"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="WechatIMG13363.jpeg" width="960" height="1280"/>
+    </resources>
+</document>
